@@ -6,6 +6,21 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
 
+  useEffect(() => {
+    fetch(
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}_type=photo&pretty=true`
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }, []);
+
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img src="https://source.unsplash.com/random" alt="" className="w-full" />

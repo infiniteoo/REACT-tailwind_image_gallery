@@ -1,25 +1,25 @@
 import React from "react";
 
-const ImageCard = () => {
+const ImageCard = ({ image }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
-      <img src="https://source.unsplash.com/random" alt="" className="w-full" />
+      <img src={image.webformatURL} alt="" className="w-full" />
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">
-          Photo By John Doe
+          Photo By {image.user}
         </div>
         <ul>
           <li>
             <strong>Views: </strong>
-            4000
+            {image.views}
           </li>
           <li>
             <strong>Downloads: </strong>
-            300
+            {image.downloads}
           </li>
           <li>
             <strong>Likes: </strong>
-            400
+            {image.likes}
           </li>
         </ul>
       </div>

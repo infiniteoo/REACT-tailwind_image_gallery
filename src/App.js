@@ -8,7 +8,8 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}_type=photo&pretty=true`
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}_type=photo&pretty=true`,
+      { mode: "cors" }
     )
       .then((res) => res.json())
       .then(

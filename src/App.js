@@ -23,11 +23,11 @@ function App() {
           console.log(error);
         }
       );
-  }, []);
+  }, [term]);
 
   return (
     <div className="container mx-auto">
-      <ImageSearch />
+      <ImageSearch searchText={(text) => setTerm(text)} />
       {isLoading ? (
         <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
       ) : (
